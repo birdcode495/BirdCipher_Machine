@@ -9,7 +9,6 @@ import pyperclip as clipboard
 import psycopg2
 import os
 
-from BirdCipher_Machine_functs import *
 from imagenes_ing_social import *
 from tests_ing_social import *
 from hash import *
@@ -786,19 +785,15 @@ hr = ttk.Frame(notebk, width = 1050, height=540)
 hr.configure(style = "BW.TLabel")
 hr.pack(fill = 'both', expand = True)
 notebk.add(hr, text = " Login")
+
+fr0 = ttk.Frame(notebk, width = 1050, height = 540)
+fr0.pack(fill = 'both', expand = True)
+notebk.add(fr0, text = '   Cybersecurity and social engineering')
 		
 fr = ttk.Frame(notebk, width = 1050, height=540)
 fr.configure(style = "BW.TLabel")
 fr.pack(fill = 'both', expand = True)
 notebk.add(fr, text = "      BirdCipher Decrypt Machine")
-
-fr0 = ttk.Frame(notebk, width = 1050, height = 540)
-fr0.pack(fill = 'both', expand = True)
-notebk.add(fr0, text = '   Cybersecurity and social engineering')
-
-fr0a = ttk.Frame(notebk, width = 1050, height = 540)
-fr0a.pack(fill = 'both', expand = True)
-notebk.add(fr0a, text = '   RamsonBird Machine')
 
 fr2 = ttk.Frame(notebk, width = 1150, height = 540)
 fr2.pack(fill = 'both', expand = True)
@@ -807,6 +802,10 @@ notebk.add(fr2, text = "   Encryption Machine")
 fr3 = ttk.Frame(notebk, width = 1050, height = 540)
 fr3.pack(fill = 'both', expand = True)
 notebk.add(fr3, text = "   Decryption Machine")
+
+fr0a = ttk.Frame(notebk, width = 1050, height = 540)
+fr0a.pack(fill = 'both', expand = True)
+notebk.add(fr0a, text = '   RamsonBird Machine')
 
 login_label = tk.Label(hr, text = 'Log in the BirdCipher Machine!!', font = ("Comic Sans MS", 14))
 login_label.config(fg = "#7e086c")
@@ -825,7 +824,7 @@ password_label.config(fg = "#7e086c")
 password_label.place(x = 50, y = 160)
 
 password_entry = tk.Entry(hr, textvariable = password_dbc, font = ('Comic Sans MS', 15), justify = 'center')
-password_entry.config(bg = '#050005', fg = '#f7a6f1')
+password_entry.config(bg = '#050005', fg = '#f7a6f1', show = '*')
 password_entry.place(x = 50, y = 190)
 
 position_label = tk.Label(hr, text = 'Position', font = ('Comic Sans MS', 12))
@@ -844,13 +843,17 @@ hash256_passw = tk.Label(hr, text = 'Your password hash (SHA 256) is:', font = (
 hash256_passw.config(fg = "#7e086c")
 hash256_passw.place(x = 20, y = 440)
 
-hash256_passw_label = tk.Label(hr, font = ('Comic Sans MS', 8), width = 60)
+hash256_passw_label = tk.Label(hr, font = ('Comic Sans MS', 8), width = 62)
 hash256_passw_label.config(bg = '#050005', fg = '#f7a6f1')
 hash256_passw_label.place(x = 20, y = 480)
 
 hash256passw_copy_btt = tk.Button(hr, text = 'Copy hash to clipboard')
 hash256passw_copy_btt.config(fg = '#7e086c', font = ('Comic Sans MS', 9))
-hash256passw_copy_btt.place(x = 460, y = 475)
+hash256passw_copy_btt.place(x = 480, y = 475)
+
+close_machine_from_login = tk.Button(hr, text = '  Close the BirdCipher Machine  ', command = lambda:closeMachine())
+close_machine_from_login.config(fg = '#7e086c', font = ('Comic Sans MS', 14))
+close_machine_from_login.place(x = 700, y = 460)
 
 bc_logo_login = tk.Label(hr, image = bc_logo_loginImage)
 bc_logo_login.config(bg = '#260223')
